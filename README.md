@@ -10,3 +10,11 @@ Osa 0
 <BR>
 0.6 Käyttäjä luo [uuden muistiinpanon single page](https://github.com/rparkkon/fullstack/blob/master/osa0/luoUusiSpa.png)
 <BR>
+
+Osa 1
+<BR>
+1.1 [jako komponenteiksi](https://github.com/rparkkon/fullstack/blob/master/osa1/index.11.js)
+<BR>
+1.2 [lisää komponentteja](https://github.com/rparkkon/fullstack/blob/master/osa1/index.12.js)
+<BR>
+

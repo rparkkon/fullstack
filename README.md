@@ -13,8 +13,8 @@ Osa 0
 
 Osa 1
 <BR>
-1.1 [jako komponenteiksi](https://github.com/rparkkon/fullstack/blob/master/osa1/index.11.js)
+1.1 [jako komponenteiksi](https://github.com/rparkkon/fullstack/blob/master/osa1/src/index.11.js)
 <BR>
-1.2 [lisää komponentteja](https://github.com/rparkkon/fullstack/blob/master/osa1/index.12.js)
+1.2 [lisää komponentteja](https://github.com/rparkkon/fullstack/blob/master/osa1/src/index.12.js)
 <BR>
 

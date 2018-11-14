@@ -1,85 +1,132 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const x = 1
-let y = 5
+const Display = (props) =>
+{
+  const counter = props.counter
+  console.log('display: ', props, ' c:', counter); 
+  return (<div>{counter}</div>)
+}
+//const Display = ({counter}) => {console.log('display: ', counter); return (<div>{counter}</div>)}
+//const Display = ({counter}) => <div>{counter}</div>
 
-console.log(x, y)  // tulostuu 1, 5
-y += 10
-console.log(x, y)  // tulostuu 1, 15
-y = 'teksti'
-console.log(x, y)  // tulostuu 1, teksti
-//x = 4 
+const Button = ({handleClick, text}) => (
+  <button onClick={handleClick}>
+    {text}
+  </button>
+)
 
+class App extends React.Component { 
+  constructor() {
+    super()
+    this.state = {
+      counter: 1,
+      vasen : 0,
+      oikea : 0,
+      kaikki: [],
+      value: 0
+    }
+    /*
+    setInterval(() => {
+      this.setState({counter: this.state.counter + 1})
+    }, 1000)
+    */
+  }
 
-const t = [1, 2, 3, 4]
+ /* 
+asetaArvoon = (arvo) => {
+  console.log('clicked', arvo)
+  return () => {
+    this.setState({counter: arvo})
+  }
+}
+*/
+asetaArvoon = (arvo) => () => { this.setState({counter: arvo}) }
 
-const m1 = t.map((luku) => luku * 2)
-console.log(m1) // tulostuu [2, 4, 6, 8]
+klikVasen = (arvo) => () => {
+   this.setState({
+     vasen: this.state.vasen + 1,
+     kaikki:this.state.kaikki.concat('v')
+   })
+  } 
+klikOikea = (arvo) => () => { this.setState({counter: arvo}) }
+miinus = () => {this.setState({counter: this.state.counter - 1})}
+//  miinus() {this.setState({counter: this.state.counter - 1})}
 
-const m2 = t.map((luku) => '<li>' + luku + '</li>')
-console.log(m2) 
+handler = () => {
+  console.log('Nappia painettu')
+  this.setState({counter: 0})
+}
 
-const Kurssi = () =>  {
-    return ( 
-      
+  render() {
+    console.log('renderöidään', this.state.vasen)
+    console.log('renderöidään kaikki', this.state.kaikki)
+    const historia = () => {
+      if (this.state.kaikki.length === 0) {
+        return(<div><em>paina nappeja</em></div>)
+      }
+      return (<div>hstory: {this.state.kaikki.join(':')}</div>)
+
+    }
+
+    const hello = (who) => {
+      return () => {console.log('Hello ', who)}
+    }
+
+    const setToValue = (vavo) => {
+      return () => {this.setState({value: vavo})}
+    }
+
+    return (
       <div>
-          <h1>Half Stack -sovelluskehitys</h1>
-      </div>
+      <Display props={this.state} counter={this.state.counter}/>
+      <button onClick={
+          this.asetaArvoon(this.state.counter + 1)
+      }>
+      plus
+     </button>
+     <Button 
+       handleClick={this.asetaArvoon( 0 )}
+       text='Zero'
+       />
+     <button onClick={ this.asetaArvoon(this.state.counter - 1)} >
+     minus
+     </button>
+     <button onClick={this.miinus} >
+     miinus
+     </button>
+     <br></br>
+     <button onClick={this.klikVasen((this.state.vasen))} >
+     vasen
+     </button>
+     <br></br>
+     <br></br>
+     <button onClick={this.handler} >
+     paina
+     </button>
+
+     <br></br>
+     <br></br>
+     <button onClick={hello('Matti')} >
+     hello
+     </button>
+
+     <br></br>
+     <br></br>
+     <br></br>
+     <button onClick={setToValue(500)} >
+     500
+     </button>
+     <button onClick={setToValue(600)} >
+     600
+     </button>
+     <br></br>
+
+
+     <div>{historia()}</div>
+     </div>
     )
-}
-
-const olio1 = {
-  nimi: 'Arto Hellas',
-  ika: 35,
-  koulutus: 'Filosofian tohtori'
-}
-
-console.log(olio1.nimi)          // tulostuu Arto Hellas
-const kentanNimi = 'ika'
-console.log(olio1[kentanNimi])   // tulostuu 35
-
-const summa = (p1, p2) => {
-  console.log(p1)
-  console.log(p2)
-  return p1 + p2
-}
-const vastaus = summa(100,5)
-console.log(vastaus)
-
-const nelio = p => {
-  console.log(p)
-  return p * p
-}
-
-const snelio = p => p * p
-console.log(snelio(50))
-
-const tk = [1, 2, 3]
-const tnelio = tk.map(p => p*p)
-console.log(tnelio)
-
-
-const App = () => {
-
-  const osa1 = 'Reactin perusteet'
-  const tehtavia1 = 10
-  const osa2 = 'Tiedonvälitys propseilla'
-  const tehtavia2 = 7
-  const osa3 = 'Komponenttien tila'
-  const tehtavia3 = 14
-
-
-
-  return (    
-    <div>
-      <Kurssi />
-      <p>{osa1} {tehtavia1}</p>
-      <p>{osa2} {tehtavia2}</p>
-      <p>{osa3} {tehtavia3}</p>
-      <p>yhteensä {tehtavia1 + tehtavia2 + tehtavia3} tehtävää</p>
-    </div>
-  )
+  }
 }
 
 ReactDOM.render(

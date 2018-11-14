@@ -19,9 +19,7 @@ Osa 1
 <BR>
 1.3 [tieto olioissa](https://github.com/rparkkon/fullstack/blob/master/osa1/src/index.13.js)
 <BR>
-<BR>
 1.4 [oliot taulukkoon](https://github.com/rparkkon/fullstack/blob/master/osa1/src/index.14.js)
-<BR>
 <BR>
 1.5 [ yksi Javascript-olio](https://github.com/rparkkon/fullstack/blob/master/osa1/src/index.15.js)
 <BR>

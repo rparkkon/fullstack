@@ -16,18 +16,17 @@ const Otsikko = (props) =>  {
 }
 
 function mostVotes(votes, len = 6){
-  var i, j;
+  var i;
   var most = 0;
   if (votes) {
     console.log('this.votes.length: ', len , ' ' , votes) // votes.length )
     for (i= 0; i < len; i++) {
         if ( votes[i] > most ) {
-          most = votes[i]
-          j = i
+          most = i
         }
     }
   }
-  return j
+  return most
 }
 
 class App extends React.Component {
@@ -56,7 +55,8 @@ class App extends React.Component {
   voteAnecdote = () => {
     return () => {
       this.votes[this.state.selected] = this.votes[this.state.selected]  + 1       
-      //console.log('vote to: ', this.state.selected, ' votes: ', this.votes[this.state.selected] )
+      console.log('vote to: ', this.state.selected, ' votes: ', this.votes[this.state.selected] )
+
     }
   }
 

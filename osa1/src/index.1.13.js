@@ -7,29 +7,6 @@ const Button = ({handleClick, text}) => (
   </button>
 )
 
-const Otsikko = (props) =>  {
-  return ( 
-    <div>
-        <h1>{props.nimi}</h1>
-    </div>
-  )
-}
-
-function mostVotes(votes, len = 6){
-  var i, j;
-  var most = 0;
-  if (votes) {
-    console.log('this.votes.length: ', len , ' ' , votes) // votes.length )
-    for (i= 0; i < len; i++) {
-        if ( votes[i] > most ) {
-          most = votes[i]
-          j = i
-        }
-    }
-  }
-  return j
-}
-
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -46,17 +23,16 @@ class App extends React.Component {
       }
     }
 
-
   valitseArvo = () => {
     return () => {
       this.setState({selected: Math.floor(Math.random() * this.props.anecdotes.length )})
+      console.log('random: ', this.state.selected )
     }
   }
 
   voteAnecdote = () => {
     return () => {
-      this.votes[this.state.selected] = this.votes[this.state.selected]  + 1       
-      //console.log('vote to: ', this.state.selected, ' votes: ', this.votes[this.state.selected] )
+      console.log('vote to: ', this.state.selected )
     }
   }
 
@@ -65,17 +41,13 @@ class App extends React.Component {
     return (
       <div>
         {this.props.anecdotes[this.state.selected]}
-        <p>has {this.votes[this.state.selected]} votes</p>  
+
       <div>
         <br></br>
         <Button handleClick={this.voteAnecdote()} text='vote' />
         <Button handleClick={this.valitseArvo()} text='next anecdote' />
       </div>
 
-      <Otsikko nimi = 'anecdote with most votes' />
-      {this.props.anecdotes[mostVotes(this.votes)]}
-      <p>has {this.votes[mostVotes(this.votes)]} votes</p>  
-      
       </div>
 
     )

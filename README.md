@@ -39,3 +39,14 @@ Osa 1
 <BR>
 1.13 [anekdootit osa2](https://github.com/rparkkon/fullstack/blob/master/osa1/src/index.1.13.js)
 <BR>
+
+Osa 2
+<BR>
+2.1-3 [kurssien sisältö/määrä/reduce](https://github.com/rparkkon/fullstack/blob/master/osa2/src/app.2.3.js)
+<BR>
+2.4 [monta kurssia](https://github.com/rparkkon/fullstack/blob/master/osa2/src/app.2.4.js)
+<BR>
+2.5 [monta kurssia](https://github.com/rparkkon/fullstack/blob/master/osa2/src/app.2.5.js)
+<BR>
+    [erillinen moduuli](https://github.com/rparkkon/fullstack/blob/master/osa2/src/components/Kurssit.2.5.js)
+

@@ -42,11 +42,9 @@ Osa 1
 
 Osa 2
 <BR>
-2.1-3 [kurssien sisältö/määrä/reduce](https://github.com/rparkkon/fullstack/blob/master/osa2/src/app.2.3.js)
+2.1-3 [kurssien sisältö/määrä/reduce](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.3.js)
 <BR>
-2.4 [monta kurssia](https://github.com/rparkkon/fullstack/blob/master/osa2/src/app.2.4.js)
+2.4 [monta kurssia](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.4.js)
 <BR>
-2.5 [monta kurssia](https://github.com/rparkkon/fullstack/blob/master/osa2/src/app.2.5.js)
-<BR>
-    [erillinen moduuli](https://github.com/rparkkon/fullstack/blob/master/osa2/src/components/Kurssit.2.5.js)
+2.5 [monta kurssia](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.5.js)  [erillinen moduuli](https://github.com/rparkkon/fullstack/blob/master/osa2/src/components/Kurssit.2.5.js)
 

@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Names = ({ persons, filter = ''}) => {
-  console.log('Names: ', persons , ' ', filter )
+  //console.log('Names: ', persons , ' ', filter )
 
-  const filtered = filter === '' ?  persons : persons.filter(name => {return name.name.toLowerCase().startsWith(filter) })
+  const filtered = filter === '' ?  persons : persons.filter(name => {return name.name.toLowerCase().startsWith(filter.toLowerCase()) })
   const namemap  = () => filtered.map(name => <tr key={name.name}><td>{name.name}</td><td>{name.number}</td></tr>)
 
   return (
@@ -25,7 +25,7 @@ const Otsikko = (props) =>  {
 
 // 2.9 suodatus
 const Suodatus = (props) =>  {
-  console.log('Suodatus: ',  props.filter )
+  //console.log('Suodatus: ',  props.filter )
   return ( 
     <div>
     rajaa näytettävä: 

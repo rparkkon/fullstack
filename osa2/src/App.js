@@ -3,7 +3,7 @@ import React from 'react';
 const Names = ({ persons, filter = ''}) => {
   //console.log('Names: ', persons , ' ', filter )
 
-  const filtered = filter === '' ?  persons : persons.filter(name => {return name.name.toLowerCase().startsWith(filter) })
+  const filtered = filter === '' ?  persons : persons.filter(name => {return name.name.toLowerCase().startsWith(filter.toLowerCase()) })
   const namemap  = () => filtered.map(name => <tr key={name.name}><td>{name.name}</td><td>{name.number}</td></tr>)
 
   return (
@@ -37,34 +37,6 @@ const Suodatus = (props) =>  {
   )
 }
 
-// 2.10 uuden henkilön lomake
-const  UusiHenkilo = (props) =>  {
-  //console.log('NewPerson: ' )
-  return ( 
-  <div>
-    <form  onSubmit={props.handleAddEntry}>
-    <div>
-      nimi: 
-      <input 
-        value={props.newName}
-        onChange={props.handleEntryChange}
-      />
-    </div>
-    <div>
-      numero: 
-      <input 
-        value={props.newNumber}
-        onChange={props.handleNumberChange}
-      />
-    </div>
-    <div>
-      <button type="submit">lisää</button>
-    </div>
-    </form>
-  </div>
-  )
-}
-
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -90,7 +62,6 @@ class App extends React.Component {
         // 2.8 puhelinnumero
         number: this.state.newNumber
     }
-
     // 2.7 ei tuplia
     const result = this.state.persons.find( person => person.name === entryObject.name );
     //console.log("TUPLA: ", result, 'persons: ', this.state.persons,  'entry: ', entryObject)
@@ -130,17 +101,30 @@ class App extends React.Component {
 
         <Otsikko nimi='Lisää uusi' />
 
-        <UusiHenkilo handleAddEntry={this.addEntry}
-                     newName={this.state.newName}
-                     handleEntryChange={this.handleEntryChange}
-                     newNumber={this.state.newNumber}
-                     handleNumberChange={this.handleNumberChange}
-                     />
-
+        <form  onSubmit={this.addEntry}>
+          <div>
+            nimi: 
+            <input 
+              value={this.state.newName}
+              onChange={this.handleEntryChange}
+            />
+          </div>
+          <div>
+            numero: 
+            <input 
+              value={this.state.newNumber}
+              onChange={this.handleNumberChange}
+            />
+          </div>
+          <div>
+            <button type="submit">lisää</button>
+          </div>
+        </form>
+      
         <Otsikko nimi='Numerot' />
-
+        <ul>
         <Names persons={this.state.persons} filter={this.state.filter} />
-
+        </ul>
       </div>
     )
   }

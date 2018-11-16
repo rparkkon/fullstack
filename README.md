@@ -47,4 +47,8 @@ Osa 2
 2.4 [monta kurssia](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.4.js)
 <BR>
 2.5 [monta kurssia](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.5.js)  /  [erillinen moduuli](https://github.com/rparkkon/fullstack/blob/master/osa2/src/components/Kurssit.2.5.js)
-
+<BR>
+2.6-8 [puhelinluettelo](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.8.js)
+<BR>
+2.9-10 [puhelinluettelo osa 4-5](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.10.js)
+<BR>

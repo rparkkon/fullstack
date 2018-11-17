@@ -52,3 +52,7 @@ Osa 2
 <BR>
 2.9-10 [puhelinluettelo osa 4-5](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.10.js)
 <BR>
+2.11 [puhelinluettelo osa 6](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.11.js)
+<BR>
+2.12-3 [maiden tiedot kikkaamalla](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.13.js)
+<BR>

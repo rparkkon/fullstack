@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import axios from 'axios'
-
 
 const Note = ({ note, handleClick }) => {
   return (
@@ -10,26 +10,44 @@ const Note = ({ note, handleClick }) => {
   )
 }
 
+const notes = [
+  {
+    id: 1,
+    content: 'HTML on helppoa',
+    date: '2017-12-10T17:30:31.098Z',
+    important: true
+  },
+  {
+    id: 2,
+    content: 'Selain pystyy suorittamaan vain javascriptiä',
+    date: '2017-12-10T18:39:34.091Z',
+    important: false
+  },
+  {
+    id: 3,
+    content: 'HTTP-protokollan tärkeimmät metodit ovat GET ja POST',
+    date: '2017-12-10T19:20:14.298Z',
+    important: true
+  }
+]
+
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      notes: [],
+      notes: props.notes,
       newNote: '',
       showAll: true
     }
-    console.log('constructor')
   }
 
-  componentDidMount() {
-    console.log('did mount')
-    axios
-      .get('http://192.168.224.153:3001/notes')
-      .then(response => {
-        console.log('promise fulfilled')
-        this.setState({ notes: response.data })
-      })
-  }
+  //const { notes } = props;
+  //const rivit = () => notes.map(note => <li key={note.id}>{note.content}</li>)
+  //const result = notes.map(note => note.content)
+  //console.log(result)
+
+  //const result = notes.map(note => note.content )
+  //console.log(result)
 
   addNote = (event) => {
     event.preventDefault()
@@ -55,9 +73,17 @@ class App extends React.Component {
 
 
   render() {
-    console.log('render')
-    // ...
 
+    axios
+    .get('http://192.168.224.153:3001/notes')
+    .then(response => {
+      const notes = response.data
+      console.log(notes)
+    })
+
+    const promise2 = axios.get('http://192.168.224.153:3001/foobar')
+    console.log(promise2)  
+  
     return (
       <div>
         <h1>Muistiinpanot</h1>
@@ -76,4 +102,7 @@ class App extends React.Component {
   }
 }
 
-export default App;
+ReactDOM.render(
+  <App notes={notes} />,
+  document.getElementById('root')
+)

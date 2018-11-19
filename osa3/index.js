@@ -39,7 +39,6 @@ let persons = [
   app.get('/info', (req, res) => {
     const today = new Date();
     console.log('persons count: ',persons.length)
-    console.log('random: ',  getRandomInt(3000000))
     const info = '<p>Puhelinluettelossa on '.concat(persons.length).concat(' henkilön tiedot</p>').concat('<p>').concat(today).concat('</p>')
     res.send(info);
   })

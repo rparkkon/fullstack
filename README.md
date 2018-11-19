@@ -65,5 +65,5 @@ Osa 2
 
 Osa 3
 <BR>
-3.1-6 [puhelinluettelon backend osa 1-6](https://github.com/rparkkon/fullstack/blob/master/osa3/src/index.3.6.js)
+3.1-6 [puhelinluettelon backend osa 1-6](https://github.com/rparkkon/fullstack/blob/master/osa3/index.3.6.js)
 <BR>

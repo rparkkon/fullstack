@@ -176,7 +176,8 @@ personService
       const personToDelete = this.state.persons.find( person => String(person.id) === String(event.target.id))
 
       if (personToDelete) {
-        if (window.confirm('Poistetaanko '.concat(personToDelete.name).concat(' [' , event.target.id, ']?'))) { 
+        //if (window.confirm('Poistetaanko '.concat(personToDelete.name).concat(' [' , event.target.id, ']?'))) { 
+        if (window.confirm('Poistetaanko '.concat(personToDelete.name).concat('?'))) { 
           personService
             .deletePerson(personToDelete.id)
             .then(response => {

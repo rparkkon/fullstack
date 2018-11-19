@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios'
+import noteService from './services/notes'
 
-
-const Note = ({ note, handleClick }) => {
+const Note = ({ note, toggleImportance }) => {
   return (
-    <li onClick={handleClick}>
+    <li onClick={toggleImportance}>
       {note.content} <strong>{note.important ? 'tärkeä' : ''}</strong>
     </li>
   )
@@ -23,13 +23,20 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log('did mount')
+    /*
     axios
       .get('http://192.168.224.153:3001/notes')
       .then(response => {
         console.log('promise fulfilled')
         this.setState({ notes: response.data })
       })
-  }
+      */
+      noteService
+      .getAll()
+      .then(response => {
+        this.setState({notes: response})
+      })
+    }
 
   addNote = (event) => {
     event.preventDefault()
@@ -41,11 +48,32 @@ class App extends React.Component {
         important: Math.random() > 0.5,
         id: this.state.notes.length + 1
     }
+    /*
     const notes = this.state.notes.concat(noteObject)
     this.setState({
       notes: notes,
       newNote: ''
     })
+    */
+   /*
+   axios
+    .post('http://192.168.224.153:3001/notes', noteObject)
+    .then(response => {
+      console.log(response)
+      this.setState({
+        notes: this.state.notes.concat(response.((data),
+        newNote: ''
+      })
+    })
+    */
+    noteService
+      .create(noteObject)
+      .then(response => {
+        this.setState({
+          notes: this.state.notes.concat(response.data),
+          newNote: ''
+        })
+      })
   }
 
   handleNoteChange = (event) => {
@@ -53,17 +81,57 @@ class App extends React.Component {
     this.setState({ newNote: event.target.value })
   }
 
+  toggleImportanceOf = (id) => {
+    return () => {
+      console.log('importance of '+id+' needs to be toggled')
+      const note = this.state.notes.find(n => n.id === id)
+      const changedNote = { ...note, important: !note.important }
+
+      /*
+      const url = `http://192.168.224.153:3001/notes/${id}`
+      axios
+      .put(url, changedNote)
+      .then(response => {
+        this.setState({
+          notes: this.state.notes.map(note => note.id !== id ? note : response.data)
+        })
+      })  
+      */
+
+     noteService
+      .update(id, changedNote)
+      .then(response => {
+       this.setState({
+         notes: this.state.notes.map(note => note.id !== id ? note : response.data)
+       })
+      })
+      .catch(Error => {
+        console.log('error:' , Error)
+        alert(`muistiinpano '${note.content}' on jo valitettavasti poistettu palvelimelta`)
+       })
+    }
+  }
 
   render() {
     console.log('render')
-    // ...
+
+    const notesToShow =
+      this.state.showAll ?
+        this.state.notes :
+        this.state.notes.filter(note => note.important === true)
 
     return (
       <div>
         <h1>Muistiinpanot</h1>
         <ul>
-          {this.state.notes.map(note => <Note key={note.id} note={note} />)}
-        </ul>
+          {notesToShow.map(note =>
+            <Note
+              key={note.id}
+              note={note}
+              toggleImportance={this.toggleImportanceOf(note.id)}
+            />
+          )}
+          </ul>
         <form onSubmit={this.addNote}>
           <input 
             value={this.state.newNote}

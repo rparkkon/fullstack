@@ -62,3 +62,8 @@ Osa 2
 <BR>
 2.18-9 [puhelinluettelo osa 11-12](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.19.js)  /  [index.css](https://github.com/rparkkon/fullstack/blob/master/osa2/src/index.css)
 <BR>
+
+Osa 3
+<BR>
+3.1-6 [puhelinluettelon backend osa 1-6](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.3.6.js)
+<BR>

@@ -4,11 +4,7 @@ const baseUrl = 'http://192.168.224.153:3001/persons'
 const getAll = () => {
    const request = axios.get(baseUrl)
    console.log('persons getAll:',  request)
-   const nonExisting = {
-    name: 'Tätä nimeä ei ole palvelimelta',
-    number: '12345678'
-  }   
-   return request.then(response => response.data.concat(nonExisting))
+   return request.then(response => response.data)
 }
 
 const create = (newObject) => {
@@ -17,7 +13,14 @@ const create = (newObject) => {
 }
 
 const update = (id, newObject) => {
-  return axios.put(`${baseUrl}/${id}`, newObject)
+    const request =  axios.put(`${baseUrl}/${id}`, newObject) 
+    return request.then(response => response.data) 
 }
 
-export default { getAll, create, update }
+const deletePerson = (id) => {
+//    HTTP DELETE
+    const request = axios.delete(`${baseUrl}/${id}`) 
+    return request.then(response => response.data) 
+  }
+
+export default { getAll, create, update, deletePerson }

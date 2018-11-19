@@ -58,3 +58,5 @@ Osa 2
 <BR>
 2.14-5 [puhelinluettelo osa 7-8](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.15.js)  /  [moduuli](https://github.com/rparkkon/fullstack/blob/master/osa2/src/services/persons.js)
 <BR>
+2.16-7 [puhelinluettelo osa 9-10](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.17.js)
+<BR>

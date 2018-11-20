@@ -73,3 +73,5 @@ Osa 3
 3.8 --
 <BR>
 3.9 [puhelinluettelon backend osa 9](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.3.9.js)  /  [service moduuli](https://github.com/rparkkon/fullstack/blob/master/osa2/src/services/persons.3.9.js)
+<BR>
+3.10 puhelinluettelon backend osa 10 [heroku backend](https://dry-beach-63310.herokuapp.com/api/persons)

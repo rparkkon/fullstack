@@ -72,4 +72,4 @@ Osa 3
 <BR>
 3.8 --
 <BR>
-3.9 [puhelinluettelon backend osa 9](https://github.com/rparkkon/fullstack/blob/master/osa2/index.3.9.js)  /   [service moduuli](https://github.com/rparkkon/fullstack/blob/master/osa2/src/services/persons.3.9.js)
+3.9 [puhelinluettelon backend osa 9](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.3.9.js)  /  [service moduuli](https://github.com/rparkkon/fullstack/blob/master/osa2/src/services/persons.3.9.js)

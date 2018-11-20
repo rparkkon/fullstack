@@ -3,22 +3,9 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
-const cors = require('cors')
 
-app.use(cors())
-
-morgan(':method :url :status :res[content-length] - :response-time ms')
-morgan(function (tokens, req, res) {
-  return [
-    tokens.method(req, res),
-    tokens.url(req, res),
-    tokens.status(req, res),
-    tokens.res(req, res, 'content-length'), '->',
-    tokens['response-time'](req, res), 'ms'
-  ].join(' ')
-})
-app.use(morgan('common'))
-
+app.use(morgan('tiny'))
+morgan.token('type', function (req, res) { return req.headers['content-type'] })
 
 app.use(bodyParser.json())
 
@@ -89,7 +76,7 @@ let persons = [
   
   app.post('/api/persons', (request, response) => {
     const body = request.body
-    console.log('person in body: ',body)
+//    console.log('person in body: ',body)
 
     // 3.6 nimi / numero tulee olla
     if (body.name === undefined || body.name.length === 0 ) {
@@ -108,7 +95,7 @@ let persons = [
     // 3.6 ei tuplia
     const person = persons.find(person => person.name === newPerson.name)
     if (person) {
-        console.log("request.params.id: ", person.name, " already exists")
+  //      console.log("request.params.id: ", person.name, " already exists")
         return response.status(205).json({error: person.name.concat(': name must be unique')})
     } 
   

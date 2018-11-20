@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios'
 import noteService from './services/notes'
 
 const Note = ({ note, toggleImportance }) => {

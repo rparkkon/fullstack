@@ -67,3 +67,9 @@ Osa 3
 <BR>
 3.1-6 [puhelinluettelon backend osa 1-6](https://github.com/rparkkon/fullstack/blob/master/osa3/index.3.6.js)
 <BR>
+<BR>
+3.7 [puhelinluettelon backend osa 7](https://github.com/rparkkon/fullstack/blob/master/osa3/index.3.7.js)
+<BR>
+3.8 --
+<BR>
+3.9 [puhelinluettelon backend osa 9](https://github.com/rparkkon/fullstack/blob/master/osa2/index.3.9.js)  /   [service moduuli](https://github.com/rparkkon/fullstack/blob/master/osa2/src/services/persons.3.9.js)

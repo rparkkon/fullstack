@@ -1,5 +1,6 @@
 import axios from 'axios'
-const baseUrl = 'http://192.168.224.153:3001/api/persons'
+//const baseUrl = 'http://192.168.224.153:3001/api/persons'
+const baseUrl = '/api/persons'
 
 const getAll = () => {
    const request = axios.get(baseUrl)

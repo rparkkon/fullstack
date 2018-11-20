@@ -67,7 +67,6 @@ Osa 3
 <BR>
 3.1-6 [puhelinluettelon backend osa 1-6](https://github.com/rparkkon/fullstack/blob/master/osa3/index.3.6.js)
 <BR>
-<BR>
 3.7 [puhelinluettelon backend osa 7](https://github.com/rparkkon/fullstack/blob/master/osa3/index.3.7.js)
 <BR>
 3.8 --
@@ -76,4 +75,5 @@ Osa 3
 <BR>
 3.10 puhelinluettelon backend osa 10 [heroku backend](https://dry-beach-63310.herokuapp.com/api/persons)
 <BR>
-3.11 puhelinluettelo [full stack](https://dry-beach-63310.herokuapp.com/)
+3.11 puhelinluettelo [osa 11 full stack](https://dry-beach-63310.herokuapp.com/)
+<BR>

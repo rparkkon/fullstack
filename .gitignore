@@ -12,7 +12,8 @@
 #/build
 
 .env
-osa2/deploy.sh
+/osa2/deploy.sh
+/dry-beach-63310
 
 # misc
 .DS_Store

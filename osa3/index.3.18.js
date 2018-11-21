@@ -93,9 +93,10 @@ const formatPerson = (person) => {
 //    persons = persons.filter(person => person.id !== id)
 //    response.status(204).end()
       Person
-//      .findByIdAndRemove(request.params.id)
-      .findOneAndDelete(request.params.id)
+      .findByIdAndRemove(request.params.id)
+//      .findOneAndDelete(request.params.id)   poistaa ensimmäisen !?!?!?
       .then(person => {
+        console.log("app.deleted: ", person.name, " ", person.id)
         response.status(204).end() //  json(formatPerson(person))
       })
       .catch(error => {
@@ -165,6 +166,6 @@ const formatPerson = (person) => {
   const PORT =  process.env.PORT || 3001
   app.listen(PORT, () => {
     const today = new Date();
-    console.log(`Server D running on port ${PORT}  ${today}`)
+    console.log(`Server G running on port ${PORT}  ${today}`)
   })
 

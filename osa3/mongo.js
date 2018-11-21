@@ -17,7 +17,7 @@ let numero
 let n
 
 process.argv.forEach((val, index) => {
-    console.log(`${index}: ${val}`);
+//    console.log(`${index}: ${val}`);
     if (index === 2) {
         nimi = val
     }
@@ -27,20 +27,20 @@ process.argv.forEach((val, index) => {
     n = index
   });
 
-  console.log(`index: ${n}`);
+//  console.log(`index: ${n}`);
   if (n > 1) {
     const person = new Person({
     name: nimi,
     number: numero
     })
 
-    console.log(`Person: ${person}`);
+    console.log(`Lisätään henkilö: ${person.name} numero ${person.number} luetteloon`);
     //mongoose.connection.close()
 
     person
     .save()
     .then(result => {
-        console.log('person saved!')
+        //console.log('person saved!')
         mongoose.connection.close()
     })
 }

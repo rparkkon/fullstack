@@ -85,6 +85,8 @@ Osa 3
 <BR>
 3.16-8 puhelinluettelo ja [tietokanta, osa 5-6](https://github.com/rparkkon/fullstack/blob/master/osa3/index.3.18.js)
 <BR>
-3.20-21 tietokantaa käyttävä [versio internettiin]((https://dry-beach-63310.herokuapp.com/))
+3.19 -
+<BR>
+3.20-21 tietokantaa käyttävä [versio internettiin](https://dry-beach-63310.herokuapp.com/)
 <BR>
 3.22 Ok.

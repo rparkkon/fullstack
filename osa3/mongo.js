@@ -45,7 +45,7 @@ process.argv.forEach((val, index) => {
     })
 }
 else {
-    console.log(`Puheliluettelo:`);
+    console.log(`Puhelinluettelo:`);
 
     Person
     .find({})

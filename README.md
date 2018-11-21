@@ -77,7 +77,7 @@ Osa 3
 <BR>
 3.11 puhelinluettelo osa 11 [heroku full stack](https://dry-beach-63310.herokuapp.com/)
 <BR>
-3.12 [tietokanta komentoriviltä](https://github.com/rparkkon/fullstack/blob/master/osa3/backend/mongo.js))
+3.12 [tietokanta komentoriviltä](https://github.com/rparkkon/fullstack/blob/master/osa3/backend/mongo.js)
 <BR>
 3.13,15 puhelinluettelo ja [tietokanta, osa 1,3](https://github.com/rparkkon/fullstack/blob/master/osa3/backend/index.3.15.js)   /  [models](https://github.com/rparkkon/fullstack/blob/master/osa3/backend/models/person.js)
 <BR>

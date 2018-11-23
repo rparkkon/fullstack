@@ -95,9 +95,9 @@ Osa 4
 <BR>
 4.1 [blogilista, osa 1](https://github.com/rparkkon/fullstack/blob/master/osa4/bck/index.4.1.js)
 <BR>
-4.2 [blogilista, osa 1](https://github.com/rparkkon/fullstack/blob/master/osa4/bck/index.4.2.js)  /  [controllers](https://github.com/rparkkon/fullstack/blob/master/osa4/bck/controllers/blogs.js)
+4.2 [blogilista, osa 1](https://github.com/rparkkon/fullstack/blob/master/osa4/bck/index.4.2.js)  /  [controllers](https://github.com/rparkkon/fullstack/blob/master/osa4/bck/controllers/blogs.4.2.js)
 <BR>
-4.3-7 [yksikkötestaus](https://github.com/rparkkon/fullstack/blob/master/osa4/bck/index.4.1.js)  /  [listHelper](https://github.com/rparkkon/fullstack/blob/master/osa4/utils/list_helper.js)   /  [](https://github.com/rparkkon/fullstack/blob/master/osa4/tests/bloglist.test.js)
+4.3-7 [yksikkötestaus](https://github.com/rparkkon/fullstack/blob/master/osa4/bck/index.4.1.js)  /  [listHelper](https://github.com/rparkkon/fullstack/blob/master/osa4/utils/list_helper.js)   /  [bloglist test](https://github.com/rparkkon/fullstack/blob/master/osa4/tests/bloglist.test.4.7.js)
 <BR>
 4.8-11 [ blogilistan testit, osa 1-4](https://github.com/rparkkon/fullstack/blob/master/osa4/tests/blog_api.test.4.11.js)
 <BR>

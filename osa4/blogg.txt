@@ -1,0 +1,44 @@
+0: /usr/bin/node
+1: /home/pomo/fullstack/osa4/mongo.js
+Lista:
+Tekemisen taito Taito Tuunanen  www.taito.fi likes:  0
+Tekemisen suru Matti Tuunanen  www.taito.fi likes:  0
+Tekemisen suru Matti Tuunanen  www.taito.fi likes:  0
+Tekemisen koulu Matti Tuunanen  www.taito.fi likes:  0
+Tekemisen joulu Matti Tuunanen  www.taito.fi likes:  0
+Tekemisen laulu Matti Tuunanen  www.taito.fi likes:  0
+Tekemisen nousu Matti Tuunanen  www.taito.fi likes:  0
+Tekemisen housu Matti Tuunanen  www.taito.fi likes:  0
+Tekemisen poru Matti Tuunanen  www.taito.fi likes:  0
+Tekemisen puute ja puhe Matti Tuunanen  www.taito.fi likes:  0
+Tekemisen hiisi Matti Tuunanen  www.taito.fi likes:  0
+Tekemisen piisi Matti Tuunanen  www.taito.fi likes:  0
+Tekemisen liisi Matti Tuunanen  www.taito.fi likes:  0
+React patterns and putterns Michael Chan  https://reactpatterns.com/ likes:  7
+React patterns and putterns and mutterns Michael Chan  https://reactpatterns.com/ likes:  5
+React patterns and putterns and mutterns and jitterns Michael Chan  https://reactpatterns.com/ likes:  5
+React patterns and putterns and mutterns and jitterns Michael Chan  https://reactpatterns.com/ likes:  5
+Patterns and putterns and mutterns and jitterns Michael Chan  https://reactpatterns.com/ likes:  4
+and putterns and mutterns and jitterns Michael Chan  https://reactpatterns.com/ likes:  4
+and putterns and mutterns and jitterns Michael Chan  https://reactpatterns.com/ likes:  4
+Tekemisen ilo ja suru Matti Tuunanen  www.taito.fi likes:  0
+but mutterns and jitterns Michael Chan  https://reactpatterns.com/ likes:  4
+butter mutterns and jitterns Michael Chan  https://reactpatterns.com/ likes:  4
+butter mutterns jitterns Michael Chan  https://reactpatterns.com/ likes:  4
+butter jitterns Michael Chan  https://reactpatterns.com/ likes:  4
+butter but jitterns Michael Chan  https://reactpatterns.com/ likes:  4
+butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  4
+Tekemisen palo ja suru Matti Tuunanen  www.taito.fi likes:  0
+0 butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  0
+NaN butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  0
+NN butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  0
+NxN butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  0
+NzN butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  0
+NzN butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  0
+NzN butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  0
+NzzN butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  0
+NzxzN butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  0
+NzxzN butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  5
+NzyzN butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  5
+NzxyzN butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  0
+NzxyzN butter butmut jitterns Michael Chan  https://reactpatterns.com/ likes:  0

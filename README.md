@@ -90,3 +90,17 @@ Osa 3
 3.20-21 tietokantaa käyttävä [versio internettiin](https://dry-beach-63310.herokuapp.com/)
 <BR>
 3.22 Ok.
+
+Osa 4
+<BR>
+4.1 [blogilista, osa 1](https://github.com/rparkkon/fullstack/blob/master/osa4/bck/index.4.1.js)
+<BR>
+4.2 [blogilista, osa 1](https://github.com/rparkkon/fullstack/blob/master/osa4/bck/index.4.2.js)  /  [controllers](https://github.com/rparkkon/fullstack/blob/master/osa4/bck/controllers/blogs.js)
+<BR>
+4.3-7 [yksikkötestaus](https://github.com/rparkkon/fullstack/blob/master/osa4/bck/index.4.1.js)  /  [listHelper](https://github.com/rparkkon/fullstack/blob/master/osa4/utils/list_helper.js)   /  [](https://github.com/rparkkon/fullstack/blob/master/osa4/tests/bloglist.test.js)
+<BR>
+4.8-11 [ blogilistan testit, osa 1-4](https://github.com/rparkkon/fullstack/blob/master/osa4/tests/blog_api.test.4.11.js)
+<BR>
+4.12 blogilistan laajennus, osa 1 [????](https://github.com/rparkkon/fullstack/blob/master/osa4/tests/test_helper.js)
+<BR>
+4.13-14 [ blogilistan laajennus, osa 2-3](https://github.com/rparkkon/fullstack/blob/master/osa4/bck/controllers/blogs.4.14.js)

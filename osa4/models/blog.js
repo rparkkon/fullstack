@@ -8,11 +8,10 @@ const blogSchema = mongoose.Schema({
     user: { type: mongoose.Schema.Types.Object, ref: 'User' }
     })
 
-
   blogSchema.statics.format = (blog) => {
     return {
       id: blog._id,
-      user: blog.user,  // User.format
+      user: blog.user,  // User.format ????
       title: blog.title,
       author: blog.author,
       url: blog.url,

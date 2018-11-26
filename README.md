@@ -113,7 +113,7 @@ Osa 4
 <BR>
 4.20 --
 <BR>
-4.21 [ blogilistan laajennus, osa 10](https://github.com/rparkkon/fullstack/blob/master/osa4/controllers/blogs.4.21.js)
+4.21 [ blogilistan laajennus, osa 10](https://github.com/rparkkon/fullstack/blob/master/osa4/controllers/blogs.js)
 
 Osa 5
 <BR>

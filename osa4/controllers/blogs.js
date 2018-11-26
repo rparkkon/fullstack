@@ -39,7 +39,8 @@ blogsRouter.get('/', async (request, response) => {
     try {
       const blogs = await Blog.find({})
 //      console.log('blogsRouter.get async: ', blogs)    
-      response.json(blogs)
+      response.json(blogs.map(Blog.format))
+
     } catch (exception) {
       console.log(exception)
       response.status(500).json({ error: 'something went wrong...' })
@@ -86,7 +87,8 @@ blogsRouter.get('/', async (request, response) => {
 //      console.log('blogsRouter.get async: ', blogs)   
       if (blog === null)
         return response.status(401).json({ error: 'blog not found' })
-      response.json(blog)
+      response.json(Blog.format(blog))
+
     } catch (exception) {
       console.log(exception)
       response.status(500).json({ error: 'something went wrong...' })

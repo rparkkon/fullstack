@@ -1,7 +1,9 @@
 const blogsRouter = require('express').Router()
 const mongoose = require('mongoose')
 const util = require('util')
-const Blog  = require('../../bck/models/blog')
+const Blog  = require('../models/blog')
+const User = require('../models/user')
+const jwt = require('jsonwebtoken')
 
 const bolgOk = (blog) => {
   let ret = ''
@@ -12,6 +14,23 @@ const bolgOk = (blog) => {
     ret = 'url is missing' 
   }
   return ret
+}
+
+const getTokenFrom = (request) => {
+  let token = null
+  let decodedToken = null
+  const authorization = request.get('authorization')
+  console.log('getTokenFrom: ', authorization)
+  if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
+    token =  authorization.substring(7)
+  }
+  if (token) {
+    decodedToken = jwt.verify(token, process.env.SECRET)
+  }
+  if (!token || !decodedToken.id) {
+    return  null
+  }
+  return decodedToken
 }
 
 // get all
@@ -63,9 +82,11 @@ blogsRouter.get('/', async (request, response) => {
  blogsRouter.get('/:id', async (request, response) => {
     console.log('blogsRouter.get: ', request.params.id)    
     try {
-      const blogs = await Blog.findById(request.params.id)
-//      console.log('blogsRouter.get async: ', blogs)    
-      response.json(blogs)
+      const blog = await Blog.findById(request.params.id)
+//      console.log('blogsRouter.get async: ', blogs)   
+      if (blog === null)
+        return response.status(401).json({ error: 'blog not found' })
+      response.json(blog)
     } catch (exception) {
       console.log(exception)
       response.status(500).json({ error: 'something went wrong...' })
@@ -77,9 +98,31 @@ blogsRouter.get('/', async (request, response) => {
 blogsRouter.delete('/:id', async (request, response) => {
   console.log('blogsRouter.delete: ', request.params.id)    
   try {
-    const blogs = await Blog.findByIdAndRemove(request.params.id)
-    response.status(204).end()
-  } catch (exception) {
+    const blog = await Blog.findById(request.params.id)
+    if (blog) {
+
+      // 4.21* only user's own blog can be deleted  
+      const decodedToken = getTokenFrom(request)
+      console.log('delete token: ', decodedToken)
+
+      if (decodedToken === null) {
+        return response.status(401).json({ error: 'token missing or invalid' })
+      }    
+
+      const user = await User.findById(decodedToken.id)
+      console.log('user: ', user, ' _id: ' , user._id.toString() )    
+      if ( user && blog.user.toString() === user._id.toString() ) {       
+        const blogs = await Blog.findByIdAndRemove(request.params.id)
+        return response.status(204).end()
+      }
+      else {
+        return response.status(401).json({ error: 'invalid user' })
+      }
+    }
+    else {
+      return response.status(401).json({ error: 'blog not found' })
+    }
+} catch (exception) {
     console.log(exception)
     response.status(500).json({ error: 'something went wrong...' })
   }
@@ -87,22 +130,42 @@ blogsRouter.delete('/:id', async (request, response) => {
 
 // insert
 blogsRouter.post('/', async (request, response) => {
-  //console.log('blogsRouter.post', request.body)    
-  const blog = new Blog(request.body)
-
-  console.log('blogsRouter.title ', blog.title )    
+  console.log('blogsRouter.post', request.body)    
+  const body = new Blog(request.body)
   
-  if (blog.likes === undefined || blog.likes === null) {
-    blog.likes = 0
-  }
-
-  if (bolgOk(blog).length > 0) {
-    response.status(400).json({ error: bolgOk(blog) })
-    return
-  }
-
   try {
+
+    const decodedToken = getTokenFrom(request)
+
+    if (decodedToken === null) {
+      return response.status(401).json({ error: 'token missing or invalid' })
+    }    
+
+    const user = await User.findById(decodedToken.id)
+    console.log('user: ', user )    
+
+    const blog = new Blog({
+      title: body.title,
+      author: body.author,
+      url: body.url,
+      likes: (body.likes === undefined || body.likes === null) ? 0 : body.likes ,
+      user: user
+    })
+//    console.log('blogsRouter.title ', blog.title )    
+  
+  
+    if (bolgOk(blog).length > 0) {
+      response.status(400).json({ error: bolgOk(blog) })
+      return
+    }
+
     const blogSaved = await blog.save()
+
+    if (blogSaved) {
+      user.blogs = user.blogs.concat(blogSaved._id)
+      await user.save()
+    } 
+        
     response.status(201).json(blogSaved)
   }
   catch (exception) {

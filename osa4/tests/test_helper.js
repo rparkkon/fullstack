@@ -1,5 +1,5 @@
 const supertest = require('supertest')
-const { app, server } = require('../bck/index')
+const { app, server } = require('../index')
 const api = supertest(app)
 
 const format = (blog) => {

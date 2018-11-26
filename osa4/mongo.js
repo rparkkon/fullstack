@@ -60,7 +60,7 @@ else {
     .find({})
     .then(result => {
         result.forEach(blog => {
-            console.log(`${blog.title} ${blog.author}  ${blog.url} likes:  ${blog.likes} id:  ${blog._id}`);
+            console.log(`${blog.title} ${blog.author}  ${blog.url} likes:  ${blog.likes} id:  ${blog._id}  user:  ${blog.user}`);
         })
         mongoose.connection.close()
     })

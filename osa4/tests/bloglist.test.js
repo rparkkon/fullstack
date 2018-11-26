@@ -1,4 +1,4 @@
-const listHelper = require('../bck/utils/list_helper')
+const listHelper = require('../utils/list_helper')
 
 
 test('dummy is called', () => {

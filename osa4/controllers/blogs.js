@@ -38,8 +38,10 @@ blogsRouter.get('/', async (request, response) => {
   //    console.log('blogsRouter.get: ', request.route)    
     try {
       const blogs = await Blog.find({})
+                              .populate('User', {username: 1, name: 1})
+
 //      console.log('blogsRouter.get async: ', blogs)    
-      response.json(blogs.map(Blog.format))
+      response.json(blogs) // .map(Blog.format))
 
     } catch (exception) {
       console.log(exception)

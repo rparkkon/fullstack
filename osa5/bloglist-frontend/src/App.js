@@ -7,6 +7,9 @@ import Notification from './components/Notification'
 import NewBlog from './components/NewBlog'
 import LoginForm from './components/LoginForm'
 
+import SimpleBlog from './components/SimpleBlog'
+
+
 import './index.css'
 
 
@@ -29,12 +32,19 @@ class App extends React.Component {
       user: null
     }
   }
-  
+
+  // Integraatiotestaus tehtävä 5.16 ???
+  /*
+  componentDidMount() {
+    blogService
+        .getAll()
+        .then(blogs => this.setState({ blogs }))
+    }  
+*/
   async componentDidMount() {
     try {
       const raw = await blogService.getAll()
       const blogs = raw.sort((a, b ) => b.likes - a.likes)
-//      console.log('componentDidMount sorted:', blogs)
       
       this.setState({ blogs })
     } catch(exception) {
@@ -46,6 +56,7 @@ class App extends React.Component {
       }, 5000) 
     }
   } 
+
 
   showError = (err) => {
     this.setState({
@@ -147,7 +158,7 @@ class App extends React.Component {
       }
     }
   }
-  
+
 
   handleLike =  async (event) => {
     event.preventDefault()
@@ -168,7 +179,7 @@ class App extends React.Component {
         const newBlog = await blogService.update(id, blogObject)
      //   console.log('update likes:' ,  newBlog)
 
-        // replace object
+        // replace object 
         const newBlogs = this.state.blogs
         let i = newBlogs.findIndex(o => o._id === id);
         if (newBlogs[i]) { newBlogs[i] = newBlog } else { newBlogs.push(newBlog) };
@@ -210,8 +221,13 @@ class App extends React.Component {
     </Togglable> 
    )
 
+//
+// test component
+//<SimpleBlog blog={blog} onClick={this.handleLike} />
+//
+
    return (
-    <div>
+    <div className="mainApp">
         <Notification message={this.state.error} classType="error" />
  
       { this.state.user === null ? loginForm() :
@@ -227,7 +243,7 @@ class App extends React.Component {
         <h2 onClick={this.handleSort}>blogs</h2>
 
           {this.state.blogs.map(blog => 
-            <Blog key={blog._id} blog={blog} thisUser={this.state.user} likeHandler={this.handleLike} deleteHandler={this.handleDelete}/>
+             <Blog key={blog._id} blog={blog} thisUser={this.state.user} likeHandler={this.handleLike} deleteHandler={this.handleDelete}/>
           )}
 
         </div>

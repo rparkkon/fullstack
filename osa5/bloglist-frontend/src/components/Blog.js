@@ -13,9 +13,9 @@ class Blog extends React.Component {
 
   toggleDetails = (event) => {
   //  console.log('toggleDetails:' , this.state.blog.title, ' likes:', this.state.blog.likes)
-    if (event.target.id === 'title') {
+  //  if (event.target.id === 'title') {
       this.setState({details: !this.state.details})
-    }
+  //  }
   }
 
   handleLike =  async (event) => {
@@ -42,12 +42,14 @@ class Blog extends React.Component {
 
   render() {
     const blog = this.props.blog
-    const loggedUser = JSON.parse(window.localStorage.getItem('loggedNoteappUser'))
+    const loggedUser = null //  JSON.parse(window.localStorage.getItem('loggedNoteappUser'))
     //console.log('logged user: ', loggedUser)
+
+    //console.log('Blog render: ', blog._id, ' ', blog.title)
 
     const hideDetails = { display: this.state.details ? 'none' : '' }
     const showDetails = { display: this.state.details ? '' : 'none' }
-    const showDelete =  {display: (blog.user === undefined || (blog.user.username === loggedUser.username)) ? '' : 'none' }
+    const showDelete =  {display: (blog.user === undefined || ( loggedUser === null) || (blog.user.username === loggedUser.username)) ? '' : 'none' }
 
     const blogStyle = {
       paddingTop: 5,
@@ -75,19 +77,21 @@ class Blog extends React.Component {
 
 
     return (
-      <div style={blogStyle}>
+      <div style={blogStyle}  className="content">
         <div style={hideDetails}>
-          <p onClick={this.toggleDetails} id='title' >{blog.title}</p>
+          <div className="title" onClick={this.toggleDetails} id='title' >{blog.title}</div>
         </div>
         <div style={showDetails}>
-          <div onClick={this.toggleDetails} id='title' >{blog.title}
-          <div style={blogStyleDetails} > 
-            <p>{blog.author}</p> 
-            <p>{blog.url}</p>  
-            <p>{blog.likes} likes <button onClick={this.props.likeHandler} id={blog._id}> Like</button>  </p>
-            {blog.user === undefined ? '' :  <p>added by {blog.user.name}</p>}
-            <div style={showDelete}>
-              <p><button style={deleteStyleDetails} onClick={this.props.deleteHandler} id={blog._id}>Delete</button>  </p>
+          <div className="showDetails" onClick={this.toggleDetails} id='title' >{blog.title}
+          <div style={blogStyleDetails} className="contents"> 
+            <div>
+              <div className="author"><p>{blog.author}</p></div> 
+              <div className="url"><p>{blog.url}</p></div>  
+              <div className="likes"><p>{blog.likes} likes <button onClick={this.props.likeHandler} id={blog._id}> Like</button></p></div>  
+              {blog.user === undefined ? '' :  <p>added by {blog.user.name}</p>}
+              <div style={showDelete}>
+                <p><button style={deleteStyleDetails} onClick={this.props.deleteHandler} id={blog._id}>Delete</button>  </p>
+              </div>
             </div>
           </div>
           </div>

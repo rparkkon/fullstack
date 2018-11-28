@@ -118,3 +118,5 @@ Osa 4
 Osa 5
 <BR>
 5.1-5 blogilistan frontend, [osa 1-4](https://github.com/rparkkon/fullstack/blob/master/osa5/bloglist-frontend/src.5.1-5) 
+<BR>
+5.6-10 blogilistan frontend, [osa 5-10](https://github.com/rparkkon/fullstack/blob/master/osa5/bloglist-frontend/src.5.6-10) 

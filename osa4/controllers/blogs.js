@@ -20,7 +20,7 @@ const getTokenFrom = (request) => {
   let token = null
   let decodedToken = null
   const authorization = request.get('authorization')
-  console.log('getTokenFrom: ', authorization)
+  //console.log('getTokenFrom: ', authorization)
   if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
     token =  authorization.substring(7)
   }
@@ -57,7 +57,8 @@ blogsRouter.get('/', async (request, response) => {
       title: body.title,
       author: body.author,
       url: body.url,
-      likes: body.likes
+      likes: body.likes,
+      user: body.user
     })
 
     const nok = bolgOk(blogUpdated)
@@ -71,8 +72,9 @@ blogsRouter.get('/', async (request, response) => {
     try {
       //const blogSaved = await Blog.findOneAndUpdate(request.params.id, blog, {new: true})
       const blog = await Blog.findByIdAndRemove(request.params.id)
-      console.log('blogsRouter.put delete: ', request.params.id, ' blog: ', blog)  
+     // console.log('blogsRouter.put delete: ', request.params.id, ' blog: ', blog)  
       const blogSaved = await blogUpdated.save()
+     // console.log('blogsRouter.put delete new: ', blogSaved.id, ' blog: ', blogSaved)  
       response.status(201).json(blogSaved)
     } catch (exception) {
       console.log(exception)
@@ -83,7 +85,7 @@ blogsRouter.get('/', async (request, response) => {
 
 // get one
  blogsRouter.get('/:id', async (request, response) => {
-    console.log('blogsRouter.get: ', request.params.id)    
+ //   console.log('blogsRouter.get: ', request.params.id)    
     try {
       const blog = await Blog.findById(request.params.id)
 //      console.log('blogsRouter.get async: ', blogs)   
@@ -100,22 +102,28 @@ blogsRouter.get('/', async (request, response) => {
 
 // delete
 blogsRouter.delete('/:id', async (request, response) => {
-  console.log('blogsRouter.delete: ', request.params.id)    
+ // console.log('blogsRouter.delete: ', request.params.id) // , ' request:', request)    
   try {
     const blog = await Blog.findById(request.params.id)
     if (blog) {
 
       // 4.21* only user's own blog can be deleted  
+      // 5.9 a blog without user can be deleted 
       const decodedToken = getTokenFrom(request)
-      console.log('delete token: ', decodedToken)
+      //console.log('delete decodedToken: ', decodedToken)
 
-      if (decodedToken === null) {
+      if (decodedToken === null && blog.user !== undefined) {
         return response.status(401).json({ error: 'token missing or invalid' })
       }    
 
-      const user = await User.findById(decodedToken.id)
-      console.log('user: ', user, ' _id: ' , user._id.toString() )    
-      if ( user && blog.user._id.toString() === user._id.toString() ) {       
+      let user = null
+      if (decodedToken) {
+        user = await User.findById(decodedToken.id)
+        console.log('user: ', user, ' _id: ' , user._id.toString() )  
+      }
+      //console.log('blogsRouter.delete blog.user: ', blog.user)  
+
+      if ( (user && blog.user && blog.user._id.toString() === user._id.toString()) || blog.user === undefined ) {       
         const blogs = await Blog.findByIdAndRemove(request.params.id)
         return response.status(204).end()
       }
@@ -134,7 +142,7 @@ blogsRouter.delete('/:id', async (request, response) => {
 
 // insert
 blogsRouter.post('/', async (request, response) => {
-  console.log('blogsRouter.post', request.body)    
+ // console.log('blogsRouter.post', request.body)    
   const body = new Blog(request.body)
   
   try {
@@ -146,7 +154,7 @@ blogsRouter.post('/', async (request, response) => {
     }    
 
     const user = await User.findById(decodedToken.id)
-    console.log('user: ', user )    
+//    console.log('user: ', user )    
 
     const blog = new Blog({
       title: body.title,

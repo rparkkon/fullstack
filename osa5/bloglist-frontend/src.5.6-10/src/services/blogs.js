@@ -9,7 +9,7 @@ const getAll = async () => {
 }
 
 const get = async (id) => {
-  //console.log('services get: ', id)
+  console.log('services get: ', id)
   const response = await axios.get(`${baseUrl}/${id}`)
   return response.data
 }
@@ -19,7 +19,7 @@ const deleteOne = async (id) => {
     headers: { 'Authorization': token }
   }
   const response = await axios.delete(`${baseUrl}/${id}`, config)
-  //console.log('deleteOne: ', id, ' response.data', response.data)
+  console.log('deleteOne: ', id, ' response.data', response.data)
   return response.data
 }
 
@@ -36,7 +36,7 @@ const create = async (newObject) => {
 }
 
 const update = async (id, newObject) => {
-  //console.log('update: ', newObject)
+  console.log('update: ', newObject)
   const response = await axios.put(`${baseUrl}/${id}`, newObject)
   return response.data
 }

@@ -12,7 +12,7 @@ class Blog extends React.Component {
   }
 
   toggleDetails = (event) => {
-  //  console.log('toggleDetails:' , this.state.blog.title, ' likes:', this.state.blog.likes)
+    console.log('toggleDetails:' , this.state.blog.title, ' likes:', this.state.blog.likes)
     if (event.target.id === 'title') {
       this.setState({details: !this.state.details})
     }

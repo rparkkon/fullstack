@@ -25,11 +25,18 @@ class App extends React.Component {
     }
   }
   
-
-  componentDidMount() {
-    blogService.getAll().then(blogs =>
+  async componentDidMount() {
+    try {
+      const blogs = await blogService.getAll()
       this.setState({ blogs })
-    )
+    } catch(exception) {
+      this.setState({
+        error: 'did not mount',
+      })
+      setTimeout(() => {
+        this.setState({ error: null })
+      }, 5000) 
+    }
   } 
 
   login = async (event) => {
@@ -74,18 +81,29 @@ class App extends React.Component {
       author: this.state.author,
       url: this.state.url
     }
-    blogService
-      .create(blogObject)
-      .then(newBlog => {
+    console.log('new blog', blogObject)
+    try {
+      const newBlog = await blogService.create(blogObject)
+      if (newBlog) {
         this.setState({
           blogs: this.state.blogs.concat(newBlog),
           newBlog: '',
           info: 'A new blog "'.concat(this.state.title).concat('" by ').concat(this.state.author).concat(' added!')
         })
+        setTimeout(() => {
+          this.setState({ info: null })
+        }, 5000)
+      }
+    }
+    catch (error) {
+      console.log('ei mee:', error)
+      this.setState({
+        error: error
       })
-    setTimeout(() => {
-      this.setState({ info: null })
-    }, 5000)     
+      setTimeout(() => {
+        this.setState({ error: null })
+      }, 5000)
+    }     
 }
 
   handleTextFieldChange = (event) => {

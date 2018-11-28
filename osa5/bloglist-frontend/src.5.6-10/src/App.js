@@ -59,7 +59,7 @@ class App extends React.Component {
 
   login = async (event) => {
     event.preventDefault()
-   // console.log('login in with', this.state.username, this.state.password)
+    console.log('login in with', this.state.username, this.state.password)
     try{
       const user = await loginService.login({
         username: this.state.username,
@@ -85,14 +85,14 @@ class App extends React.Component {
 
   newBlog = async (event) => {
     event.preventDefault()
-  //  console.log('newBlog for user ', this.state.user.name)
+    console.log('newBlog for user ', this.state.user.name)
 
     const blogObject = {
       title: this.state.title,
       author: this.state.author,
       url: this.state.url
     }
-  //  console.log('new blog', blogObject)
+    console.log('new blog', blogObject)
     try {
       const newBlog = await blogService.create(blogObject)
       this.setState({
@@ -125,7 +125,7 @@ class App extends React.Component {
     const id = event.target.id
     const blog = this.state.blogs.find(blog => blog._id === id)
     if (blog &&  window.confirm(`delete '${blog.title}' by ${blog.author} ?`)) {
-     // console.log('handleDelete:' ,  blog)
+      console.log('handleDelete:' ,  blog)
      
       try {
         await blogService.deleteOne(id)
@@ -152,7 +152,7 @@ class App extends React.Component {
   handleLike =  async (event) => {
     event.preventDefault()
     const id = event.target.id
-   // console.log('handleLike:' , id) //  this.state.blog)
+    console.log('handleLike:' , id) //  this.state.blog)
     const blog = this.state.blogs.find(blog => blog._id === id)
     if (blog) {
       const blogObject = {
@@ -162,11 +162,11 @@ class App extends React.Component {
         likes: blog.likes + 1,
         user: blog.user
       }
-    //  console.log('handleLike:' ,  blogObject)
+      console.log('handleLike:' ,  blogObject)
 
       try {
         const newBlog = await blogService.update(id, blogObject)
-     //   console.log('update likes:' ,  newBlog)
+        console.log('update likes:' ,  newBlog)
 
         // replace object
         const newBlogs = this.state.blogs
@@ -209,6 +209,11 @@ class App extends React.Component {
       />
     </Togglable> 
    )
+
+//  const unsorted = this.state.blogs
+//  console.log('unnsorted: ', unnsorted)
+//  const sorted = unnsorted.sort((a, b) => (s ? a.title : b.title) === (s ? b.title : a.title) ? 0 : (s ? a.title : b.title) > (s ? b.title : a.title) ? 1 : -1)
+//  console.log('sorted:' , sorted)
 
    return (
     <div>

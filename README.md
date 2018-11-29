@@ -125,4 +125,6 @@ Osa 5
 <BR>
 5.16 --
 <BR>
-5.17 
+5.17-18 [unicafe revisited](https://github.com/rparkkon/fullstack/blob/master/osa5/unicafe/src-uni) 
+<BR>
+5.19-?

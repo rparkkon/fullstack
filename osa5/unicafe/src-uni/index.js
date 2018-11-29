@@ -72,7 +72,7 @@ const ShowStatistics = (props) =>  {
 }
 
 const store = createStore(counterReducer)
-
+//console.log('store: ' , store)
 
 const getStoreValue = (category) => {
 //  console.log('getValue: ', category, ' store: ',  store.getState())
@@ -99,6 +99,7 @@ class App extends React.Component {
   render() {
     const total = getStoreValueTotal()
     //console.log('total: ', total)
+    console.log('store: ' , store)
 
     const mean = total === 0 ? total : (((-1)* getStoreValue('BAD') + 0*getStoreValue('OK') + (1)* getStoreValue('GOOD')) / total).toFixed(1)
     const positive = total === 0 ? total : (100 *getStoreValue('GOOD') / total).toFixed(1);

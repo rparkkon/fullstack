@@ -1,6 +1,6 @@
 Fullstack-kurssi / R.Parkkonen
 
-Osa 0
+[Osa 0](https://github.com/rparkkon/fullstack/blob/master/osa0)
 <BR>
 0.3 [Käyttäjä navigoi muistiinpanojen sivulle](https://github.com/rparkkon/fullstack/blob/master/osa0/navigoiNotes.png)
 <BR>
@@ -11,7 +11,7 @@ Osa 0
 0.6 Käyttäjä luo [uuden muistiinpanon single page](https://github.com/rparkkon/fullstack/blob/master/osa0/luoUusiSpa.png)
 <BR>
 
-Osa 1
+[Osa 1]((https://github.com/rparkkon/fullstack/blob/master/osa1)
 <BR>
 1.1 [jako komponenteiksi](https://github.com/rparkkon/fullstack/blob/master/osa1/src/index.11.js)
 <BR>
@@ -40,7 +40,7 @@ Osa 1
 1.13 [anekdootit osa2](https://github.com/rparkkon/fullstack/blob/master/osa1/src/index.1.13.js)
 <BR>
 
-Osa 2
+[Osa 2](https://github.com/rparkkon/fullstack/blob/master/osa2) 
 <BR>
 2.1-3 [kurssien sisältö/määrä/reduce](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.3.js)
 <BR>
@@ -63,7 +63,7 @@ Osa 2
 2.18-9 [puhelinluettelo osa 11-12](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.19.js)  /  [index.css](https://github.com/rparkkon/fullstack/blob/master/osa2/src/index.css)
 <BR>
 
-Osa 3
+Osa 3[(https://github.com/rparkkon/fullstack/blob/master/osa3]
 <BR>
 3.1-6 [puhelinluettelon backend osa 1-6](https://github.com/rparkkon/fullstack/blob/master/osa3/index.3.6.js)
 <BR>
@@ -91,7 +91,7 @@ Osa 3
 <BR>
 3.22 Ok.
 
-Osa 4
+[Osa 4](https://github.com/rparkkon/fullstack/blob/master/osa4)
 <BR>
 4.1 [blogilista, osa 1](https://github.com/rparkkon/fullstack/blob/master/osa4/index.4.1.js)
 <BR>
@@ -115,7 +115,7 @@ Osa 4
 <BR>
 4.21 [ blogilistan laajennus, osa 10](https://github.com/rparkkon/fullstack/blob/master/osa4/controllers/blogs.js)
 
-Osa 5
+[Osa 5] (https://github.com/rparkkon/fullstack/blob/master/osa5)
 <BR>
 5.1-5 blogilistan frontend, [osa 1-4](https://github.com/rparkkon/fullstack/blob/master/osa5/bloglist-frontend/src.5.1-5) 
 <BR>
@@ -132,4 +132,6 @@ Osa 5
 5.21 --
 
 Osa 6
+<BR>
+6.1-5 paremmat anekdootit, [osa 1-4](https://github.com/rparkkon/fullstack/blob/master/osa6/redux-anecdotes/src.6.5)
 <BR>

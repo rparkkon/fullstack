@@ -1,7 +1,11 @@
 import React from 'react';
-
+import Notification from './components/Notification'
 
 class App extends React.Component {
+  // jos konstruktorille ei ole tarvetta, voidaan tilan alkuarvo määritellä näin
+  state = {
+    newAnecdote: ''
+  }
 
   voteAnecdote = (id) => () => {
     console.log('voteAnecdote: ', id)
@@ -11,16 +15,21 @@ class App extends React.Component {
     })
     }    
 
+    onChange = (event) => {
+      console.log('s:', event.target.value)
+      this.setState({
+        newAnecdote: event.target.value
+      })
+    } 
+  
     newAnecdote = (event) => () => {
-        console.log('newAnecdote event: ', event)
-        //event.preventDefault()        
-        console.log('newAnecdote: ')
-        const content = '??' // event.target.anecdote.value
+      //event.preventDefault()        
+      console.log('newAnecdote event: ', event)
         try{
             this.props.store.dispatch({
                 type: 'NEW',
                 data: { 
-                    content: content,
+                    content: this.state.newAnecdote,
                     votes: 0
                 }
             })
@@ -36,6 +45,8 @@ class App extends React.Component {
 
     return (
       <div>
+        <h1>Programming anecdotes</h1>
+        <Notification />
         <h2>Anecdotes</h2>
         {anecdotes.map(anecdote=>
           <div key={anecdote.id}>
@@ -51,7 +62,10 @@ class App extends React.Component {
         <h2>create new</h2>
         <div>
             <form onSubmit={this.newAnecdote()}>
-            <input name="anecdote" />
+            <input name="anecdote"
+                  value={this.state.newAnecdote}
+                  onChange={this.onChange}
+             />
             <button type="submit">create</button>
             </form>
         </div> 

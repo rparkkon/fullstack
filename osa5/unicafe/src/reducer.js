@@ -28,7 +28,7 @@ const reducer = (state = initialState, action) => {
     case 'NEW':
         const newAnecdote = {
             content: action.data.content,
-            votes: action.data.votes,
+            votes: 0,
             id:  getId()
         }
         console.log('newAnecdote data', newAnecdote)

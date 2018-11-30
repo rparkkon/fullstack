@@ -19,34 +19,30 @@ const asObject = (anecdote) => {
 
 const initialState = anecdotesAtStart.map(asObject)
 
-const reducer = (state = initialState, action) => {
-  console.log('state now: ',state)
-  console.log('action', action)
-  console.log('action data', action.data)
+const anecdoteReducer = (store = initialState, action) => {
+  //console.log('anecdoteReducer ACTION: ', action)
+  if (action.type==='VOTE') {
+    const old = store.filter(a => a.id !==action.id)
+    const voted = store.find(a => a.id === action.id)
 
-  switch (action.type) {
-    case 'NEW':
-        const newAnecdote = {
-            content: action.data.content,
-            votes: 0,
-            id:  getId()
-        }
-        console.log('newAnecdote data', newAnecdote)
-        return [ ...state,  newAnecdote]
-
-    case 'VOTE':
-        const id = action.data.id
-        const anecdoteToChange = state.find(n => n.id === id)
-        const changedAnecdote = { ...anecdoteToChange, votes: anecdoteToChange.votes + 1 }
-        return state.map(anecdote => anecdote.id !== id ? anecdote : changedAnecdote)
-
-    case 'ZERO':
-      return {}
-    
-    default:
-      return state  
+    return [...old, { ...voted, votes: voted.votes+1} ]
+  }
+  if (action.type === 'CREATE') {
+    console.log('reducer anecdoteCreate: ', action.content)
+    return [...store, { content: action.content, id: getId(), votes:0 }]
   }
 
+  return store
 }
 
-export default reducer
+export const anecdoteCreate = (content) => {
+  return {type: 'CREATE', content}
+}
+
+export const anecdoteVote = (id) => {
+  console.log('anecdoteVote id: ', id)
+  return {type: 'VOTE', id}
+}
+
+
+export default anecdoteReducer

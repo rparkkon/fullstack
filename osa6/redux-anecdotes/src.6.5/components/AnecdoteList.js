@@ -1,23 +1,51 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import {anecdoteVote} from '../reducers/anecdoteReducer'
 import {notificationChange} from '../reducers/notificationReducer'
 import Filter from './Filter'
 
+/*
+const mapStateToProps = (state) => {
+  return {
+    anecdotes: state.anecdotes,
+    filter: state.filter
+  }
+}
+*/
+
+
+const anecdotesToShow = (store) => {
+  //const { anecdotes, filter } = this.props
+  const anecdotes =  store.getState().anecdotes
+  if (filter === '') {
+    return anecdotes
+  }
+
+  const filter = store.getState().filter
+  //console.log('Filter: ', filter)
+  return  anecdotes.filter((a) => a.content.indexOf(filter)>-1 ) // startsWith(filter))  
+}
+
 class AnecdoteList extends React.Component {
+  componentDidMount() {
+    const { store } = this.context
+    this.unsubscribe = store.subscribe(() =>
+      this.forceUpdate()
+    )
+  }
+  componentWillUnmount() {
+    this.unsubscribe()
+  }
 
   render() {
 
-    let anecdotes = this.props.store.getState().anecdote
-    const filter = this.props.store.getState().filter
-    if (filter !== '') {
-      console.log('Filter: ', filter)
-      anecdotes = anecdotes.filter((a) => a.content.indexOf(filter)>-1 ) // startsWith(filter))  
-    }
+    const anecdotes = anecdotesToShow(this.context.store)
 
     return (
       <div>
         <h2>Anecdotes</h2>
-        <Filter  store={this.props.store}/>
+        <Filter />
 
       <div>
         {anecdotes.sort((a, b) => b.votes - a.votes).map(anecdote =>
@@ -28,9 +56,9 @@ class AnecdoteList extends React.Component {
             <div>
               has {anecdote.votes}
               <button onClick={() => {
-                this.props.store.dispatch(anecdoteVote(anecdote.id))
-                this.props.store.dispatch(notificationChange(`Vote for: ${anecdote.content}`))
-                setTimeout(() => {this.props.store.dispatch(notificationChange(''))}, 5000)
+                this.context.store.dispatch(anecdoteVote(anecdote.id))
+                this.context.store.dispatch(notificationChange(`Vote for: ${anecdote.content}`))
+                setTimeout(() => {this.context.store.dispatch(notificationChange(''))}, 5000)
               }
               }>
                 vote
@@ -45,4 +73,16 @@ class AnecdoteList extends React.Component {
   }
 }
 
+
+AnecdoteList.contextTypes = {
+  store: PropTypes.object
+}
 export default AnecdoteList
+
+/*
+const ConnectedAnecdoteList = connect(
+    mapStateToProps
+  )(AnecdoteList)
+
+export default ConnectedAnecdoteList
+*/

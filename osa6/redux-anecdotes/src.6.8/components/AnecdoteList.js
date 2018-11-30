@@ -13,11 +13,7 @@ const mapStateToProps = (state) => {
   }
 }
 */
-/*
-const mapDispatchToProps = {
-  importanceToggling
-}
-*/
+
 
 const anecdotesToShow = (store) => {
   //const { anecdotes, filter } = this.props

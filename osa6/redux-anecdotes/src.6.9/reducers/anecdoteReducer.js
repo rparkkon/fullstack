@@ -19,17 +19,11 @@ const asObject = (anecdote) => {
 
 const initialState = anecdotesAtStart.map(asObject)
 
-const anecdoteReducer = (store = [], action) => {
-  console.log('anecdoteReducer ACTION: ', action)
+const anecdoteReducer = (store = initialState, action) => {
+  //console.log('anecdoteReducer ACTION: ', action)
   if (action.type==='VOTE') {
     const old = store.filter(a => a.id !==action.id)
     const voted = store.find(a => a.id === action.id)
-
-    return [...old, { ...voted, votes: voted.votes+1} ]
-  }
-  if (action.type==='VOTED') {
-    const old = store.filter(a => a.id !==action.data.id)
-    const voted = store.find(a => a.id === action.data.id)
 
     return [...old, { ...voted, votes: voted.votes+1} ]
   }
@@ -37,16 +31,8 @@ const anecdoteReducer = (store = [], action) => {
     console.log('reducer anecdoteCreate: ', action.content)
     return [...store, { content: action.content, id: getId(), votes:0 }]
   }
-  if (action.type === 'INSERT') {
-    console.log('reducer INSERT: ', action.data)
-    return [...store, { content: action.data.content, id: action.data.id, votes: action.data.votes }]
-  }
 
   return store
-}
-
-export const anecdoteInsert = (data) => {
-  return {type: 'INSERT', data}
 }
 
 export const anecdoteCreate = (content) => {
@@ -56,11 +42,6 @@ export const anecdoteCreate = (content) => {
 export const anecdoteVote = (id) => {
   console.log('anecdoteVote id: ', id)
   return {type: 'VOTE', id}
-}
-
-export const anecdoteVoted = (data) => {
-  console.log('ANECDOTE VOTED: ', data)
-  return {type: 'VOTED', data}
 }
 
 

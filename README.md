@@ -137,5 +137,7 @@ Osa 6
 <BR>
 6.6-8 paremmat anekdootit, [osa 6-8](https://github.com/rparkkon/fullstack/blob/master/osa6/redux-anecdotes/src.6.8)
 <BR>
-6.9 --
+6.9 paremmat anekdootit, [osa 9](https://github.com/rparkkon/fullstack/blob/master/osa6/redux-anecdotes/src.6.9)
+<BR>
+6.10-12 anekdootit ja backend, [osa 1-3](https://github.com/rparkkon/fullstack/blob/master/osa6/redux-anecdotes/src.6.12)
 <BR>

@@ -11,7 +11,7 @@ Fullstack-kurssi / R.Parkkonen
 0.6 Käyttäjä luo [uuden muistiinpanon single page](https://github.com/rparkkon/fullstack/blob/master/osa0/luoUusiSpa.png)
 <BR>
 
-[Osa 1]((https://github.com/rparkkon/fullstack/blob/master/osa1)
+[Osa 1](https://github.com/rparkkon/fullstack/blob/master/osa1)
 <BR>
 1.1 [jako komponenteiksi](https://github.com/rparkkon/fullstack/blob/master/osa1/src/index.11.js)
 <BR>
@@ -63,7 +63,7 @@ Fullstack-kurssi / R.Parkkonen
 2.18-9 [puhelinluettelo osa 11-12](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.19.js)  /  [index.css](https://github.com/rparkkon/fullstack/blob/master/osa2/src/index.css)
 <BR>
 
-Osa 3[(https://github.com/rparkkon/fullstack/blob/master/osa3]
+[Osa 3](https://github.com/rparkkon/fullstack/blob/master/osa3]
 <BR>
 3.1-6 [puhelinluettelon backend osa 1-6](https://github.com/rparkkon/fullstack/blob/master/osa3/index.3.6.js)
 <BR>

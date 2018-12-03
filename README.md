@@ -63,7 +63,7 @@ Fullstack-kurssi / R.Parkkonen
 2.18-9 [puhelinluettelo osa 11-12](https://github.com/rparkkon/fullstack/blob/master/osa2/src/App.2.19.js)  /  [index.css](https://github.com/rparkkon/fullstack/blob/master/osa2/src/index.css)
 <BR>
 
-[Osa 3](https://github.com/rparkkon/fullstack/blob/master/osa3]
+[Osa 3](https://github.com/rparkkon/fullstack/blob/master/osa3)
 <BR>
 3.1-6 [puhelinluettelon backend osa 1-6](https://github.com/rparkkon/fullstack/blob/master/osa3/index.3.6.js)
 <BR>
@@ -115,7 +115,7 @@ Fullstack-kurssi / R.Parkkonen
 <BR>
 4.21 [ blogilistan laajennus, osa 10](https://github.com/rparkkon/fullstack/blob/master/osa4/controllers/blogs.js)
 
-[Osa 5] (https://github.com/rparkkon/fullstack/blob/master/osa5)
+[Osa 5](https://github.com/rparkkon/fullstack/blob/master/osa5)
 <BR>
 5.1-5 blogilistan frontend, [osa 1-4](https://github.com/rparkkon/fullstack/blob/master/osa5/bloglist-frontend/src.5.1-5) 
 <BR>
@@ -140,4 +140,6 @@ Osa 6
 6.9 paremmat anekdootit, [osa 9](https://github.com/rparkkon/fullstack/blob/master/osa6/redux-anecdotes/src.6.9)
 <BR>
 6.10-12 anekdootit ja backend, [osa 1-3](https://github.com/rparkkon/fullstack/blob/master/osa6/redux-anecdotes/src.6.12)
+<BR>
+6.13-15 anekdootit ja backend, [osa 4-6, thunk](https://github.com/rparkkon/fullstack/blob/master/osa6/redux-anecdotes/src.6.15)
 <BR>

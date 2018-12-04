@@ -143,3 +143,9 @@ Osa 6
 <BR>
 6.13-15 anekdootit ja backend, [osa 4-6, thunk](https://github.com/rparkkon/fullstack/blob/master/osa6/redux-anecdotes/src.6.15)
 <BR>
+6.16-18 routed anecdotes, [osa 1-3](https://github.com/rparkkon/fullstack/blob/master/osa6/routed-anecdotes/src/app.6.18.js)
+<BR>
+6.19-20 styled anecdotes, [osa 1-2](https://github.com/rparkkon/fullstack/blob/master/osa6/routed-anecdotes/src/app.6.20.js)
+<BR>
+<BR>
+6.21-23 styled anecdotes, [osa 1-2](https://github.com/rparkkon/fullstack/blob/master/osa6/routed-anecdotes/src/app.js)

@@ -1,13 +1,15 @@
 {
-  "name": "routed-anecdote",
+  "name": "lh5-bloglist",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
+    "prop-types": "^15.6.2",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.0.17",
+    "react-scripts": "^2.1.1",
     "semantic-ui-react": "^0.83.0"
   },
   "scripts": {
@@ -15,5 +17,16 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "proxy": "http://localhost:3003",
+  "devDependencies": {
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

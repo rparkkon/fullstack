@@ -7,4 +7,5 @@ Fullstack-kurssi / R.Parkkonen
 7.7-10 [redux, osa 1-3](https://github.com/rparkkon/fullstack/blob/master/osa7/front/src)
 <BR>
 7.14 ESLint
+<BR>
 7.20 Tyyppitarkastuksia Proptypeinä.

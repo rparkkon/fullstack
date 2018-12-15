@@ -223,6 +223,7 @@ class BlogView extends React.Component {
       <div className="container">
         <div>
           <h2 onClick={this.handleSort} id='like'>blogs</h2>
+          <Button onClick={this.handleSort} id='like'>sort blogs like</Button>
           <Button onClick={this.handleSort} id='abc'>sort blogs abc</Button>
         </div>
 
